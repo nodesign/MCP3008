@@ -66,7 +66,7 @@ int MCP3008::readADC(int adcnum) {
   } 
   digitalWrite(_cspin, HIGH);
 
-  adcout /= 2; //      # first bit is 'null' so drop it
+  adcout >>= 1; //      # first bit is 'null' so drop it
   return adcout;
 }
 
