@@ -26,12 +26,10 @@ MCP3008::MCP3008(int clockpin, int mosipin, int misopin, int cspin) {
     
 }
 
-
-
 // read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
 int MCP3008::readADC(int adcnum) {
 
-  if ((adcnum > 7) or (adcnum < 0)) return -1; // Wrong adc address return -1
+  if ((adcnum > 7) || (adcnum < 0)) return -1; // Wrong adc address return -1
 
   // algo
   digitalWrite(_cspin, HIGH);
